@@ -1,0 +1,8 @@
+{
+    "recommendations": [
+        "dbaeumer.vscode-eslint",
+        "getgauge.gauge",
+        "steoates.autoimport",
+        "streetsidesoftware.code-spell-checker"
+    ]
+}
