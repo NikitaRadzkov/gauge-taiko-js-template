@@ -1,10 +1,11 @@
 /* globals step */
-const { write, press, click, checkBox, toLeftOf, link, text, into, textBox } = require("taiko");
+const { write, press, click, checkBox, toLeftOf, link, text, into } = require("taiko");
 const assert = require("assert");
 const baseActions = require("../actions/base-actions");
+const basePage = require("../pages/base-page");
 
 step("Add task <item>", async (item) => {
-  await write(item, into(textBox("What needs to be done?")));
+  await write(item, into(basePage.newTodoInput));
   await press("Enter");
 });
 
