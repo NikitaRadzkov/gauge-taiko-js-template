@@ -16,7 +16,6 @@
     "quotes": "off",
     "no-undef": "off",
     "no-console": "off",
-    "getter-return": "off",
     "class-methods-use-this": "off",
     "no-restricted-syntax": "off",
     "no-await-in-loop": "off",
