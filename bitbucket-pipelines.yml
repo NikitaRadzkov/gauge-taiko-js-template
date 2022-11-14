@@ -1,0 +1,24 @@
+options:
+  docker: true
+pipelines:
+  default:
+    - step:
+        name: Chromium tests
+        script:
+          - npm run test"
+        services:
+          - docker
+        artifacts:
+          - reports/**.*
+        after-script:
+          - ALERT_TYPE="success"
+          - if [[ BITBUCKET_EXIT_CODE -ne 0 ]]; then ALERT_TYPE="Autotests failed" ; fi
+          -  pipe: atlassian/email-notify:0.7.0 
+             variables: 
+               USERNAME: 'myemail@example.com' 
+               PASSWORD: $PASSWORD 
+               FROM: 'myemail@example.com' 
+               TO: 'email@example.com' 
+               HOST: 'smtp.gmail.com'
+               SUBJECT: '${ALERT_TYPE} for bild ${BITBUCKET_BUILD_NUMBER}:Bitbucket Pipe Notification for ${BITBUCKET_BRANCH}'
+               ATTACHMENTS: 'reports/html-report/index.html'
