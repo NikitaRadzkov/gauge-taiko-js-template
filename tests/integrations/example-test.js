@@ -1,13 +1,13 @@
 const { write, goto, press, click, checkBox, toLeftOf, link, text, into, evaluate } = require("taiko");
-const basePage = require("../pages/base-page");
-const baseActions = require("../actions/base-actions");
+const BasePage = require("../pages/base-page");
+const BaseActions = require("../actions/base-actions");
 
 step("Open todo application", async () => {
   await goto("todo.taiko.dev");
 });
 
 step("Add task <item>", async (item) => {
-  await write(item, into(basePage.newTodoInput));
+  await write(item, into(BasePage.newTodoInput));
   await press("Enter");
 });
 
@@ -27,12 +27,12 @@ step("Clear all tasks", async () => {
 
 step("Must not have <table>", async (table) => {
   for (const row of table.rows) {
-    baseActions.assertOk(!(await text(row.cells[0]).exists(0, 0)));
+    BaseActions.assertOk(!(await text(row.cells[0]).exists(0, 0)));
   }
 });
 
 step("Must display <message>", async (message) => {
-  baseActions.assertOk(await text(message).exists(0, 0));
+  BaseActions.assertOk(await text(message).exists(0, 0));
 });
 
 step("Add tasks <table>", async (table) => {
@@ -44,6 +44,6 @@ step("Add tasks <table>", async (table) => {
 
 step("Must have <table>", async (table) => {
   for (const row of table.rows) {
-    baseActions.assertOk(await text(row.cells[0]).exists());
+    BaseActions.assertOk(await text(row.cells[0]).exists());
   }
 });

@@ -1,6 +1,6 @@
 /* globals step */
 const { write, press, text, into, textBox, setViewPort, goto } = require("taiko");
-const baseActions = require("../actions/base-actions");
+const BaseActions = require("../actions/base-actions");
 
 step("Open mobile todo application", async () => {
   await goto("todo.taiko.dev");
@@ -16,5 +16,5 @@ step("Add mobile task <item>", async (item) => {
 });
 
 step("Must mobile display <message>", async (message) => {
-  baseActions.assertOk(await text(message).exists(0, 0));
+  BaseActions.assertOk(await text(message).exists(0, 0));
 });
