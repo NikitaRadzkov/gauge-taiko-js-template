@@ -1,6 +1,6 @@
 /* globals gauge, beforeSuite, afterSuite */
 const path = require("path");
-const { openBrowser, goto, closeBrowser, screenshot } = require("taiko");
+const { openBrowser, closeBrowser, screenshot } = require("taiko");
 
 const headless = process.env.headless_chrome.toLowerCase() === "true";
 
@@ -8,7 +8,6 @@ beforeSuite(async () => {
   await openBrowser({
     headless,
   });
-  await goto("todo.taiko.dev");
 });
 
 afterSuite(async () => {

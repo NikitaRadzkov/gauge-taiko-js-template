@@ -1,9 +1,13 @@
-const { evaluate } = require("taiko");
+const assert = require("assert");
 
 class BaseActions {
-  async clearAllTask() {
-    await evaluate(() => localStorage.clear());
+  assertOk(condition) {
+    assert.ok(condition);
   }
+
+  // async clearAllTask() {
+  //   await evaluate(() => localStorage.clear());
+  // }
 }
 
 module.exports = new BaseActions();

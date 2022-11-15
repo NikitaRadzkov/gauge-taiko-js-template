@@ -8,6 +8,7 @@ To execute this specification, use
 	npm test
 
 This is a context step that runs before every scenario
+* Open todo application
 
 ## Display number of items
 * Add task "first task"
@@ -16,7 +17,7 @@ This is a context step that runs before every scenario
 * Must display "2 items left"
 
 ## Must list only active tasks
-* Add tasks
+* Add tasks 
 
    |description|
    |-----------|
