@@ -4,7 +4,8 @@
   "scripts": {
     "lint:run": "eslint \"./**\" --max-warnings=0",
     "lint:fix": "eslint \"./**\" --fix --max-warnings=0",
-    "test": "gauge run specs/"
+    "test": "gauge run specs/",
+    "test:api": "gauge run --tags 'api'" 
   },
   "dependencies": {
     "axios": "^1.1.3",
