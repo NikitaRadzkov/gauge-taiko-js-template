@@ -14,7 +14,7 @@ pipeline {
                }
                post {
                   always {
-                     sh 'tar -czvf gauge-taiko-report-chromium.tar.gz html-report'
+                     sh 'tar -czvf gauge-taiko-report-chromium.tar.gz reports/html-report'
                      archiveArtifacts 'gauge-taiko-report-chromium.tar.gz'
                      emailext attachmentsPattern: '**/gauge-taiko-report-chromium.tar.gz', body: '$DEFAULT_CONTENT', recipientProviders: [requestor()], subject: "Chromium tests", to: "email@example.com"
                   }
