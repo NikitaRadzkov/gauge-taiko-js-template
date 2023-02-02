@@ -3,6 +3,7 @@ dist
 reports
 logs
 Dockerfile
+Jenkinsfile
 *.properties
 *.spec
 *.log
@@ -17,3 +18,4 @@ Dockerfile
 *.txt
 *.docx
 *.meta
+*.yml
